@@ -1,0 +1,1660 @@
+{
+  "source": "https://apidoc.crowdchange.dev",
+  "retrieved": "2026-10-14",
+  "page_count": 59,
+  "pages": [
+    {
+      "title": "Google Analytics (GA4)",
+      "slug": "analytics/google-analytics",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/analytics/google-analytics",
+      "nav_path": [
+        "Documentation",
+        "Analytics & Tracking",
+        "Google Analytics (GA4)"
+      ],
+      "nav_order": 1,
+      "page_type": "guide",
+      "endpoint": null,
+      "http_method": null,
+      "endpoint_path": null,
+      "api_surface": null,
+      "auth": null,
+      "tags": [
+        "analytics-tracking",
+        "donations"
+      ],
+      "crm_relevant": false,
+      "description": "Connect CrowdChange to Google Analytics 4 to track pageviews, donation events, and fundraising campaign performance across your site.",
+      "word_count": 710,
+      "file": "docs/api/pages/analytics/google-analytics.md",
+      "order": 0
+    },
+    {
+      "title": "Google Tag Manager",
+      "slug": "analytics/google-tag-manager",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/analytics/google-tag-manager",
+      "nav_path": [
+        "Documentation",
+        "Analytics & Tracking",
+        "Google Tag Manager"
+      ],
+      "nav_order": 2,
+      "page_type": "guide",
+      "endpoint": null,
+      "http_method": null,
+      "endpoint_path": null,
+      "api_surface": null,
+      "auth": null,
+      "tags": [
+        "analytics-tracking",
+        "donations"
+      ],
+      "crm_relevant": false,
+      "description": "Set up Google Tag Manager on CrowdChange to forward donation, checkout, and pageview events to your marketing and analytics tools.",
+      "word_count": 880,
+      "file": "docs/api/pages/analytics/google-tag-manager.md",
+      "order": 1
+    },
+    {
+      "title": "Facebook Pixel",
+      "slug": "analytics/facebook-pixel",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/analytics/facebook-pixel",
+      "nav_path": [
+        "Documentation",
+        "Analytics & Tracking",
+        "Facebook Pixel"
+      ],
+      "nav_order": 3,
+      "page_type": "guide",
+      "endpoint": null,
+      "http_method": null,
+      "endpoint_path": null,
+      "api_surface": null,
+      "auth": null,
+      "tags": [
+        "analytics-tracking",
+        "donations"
+      ],
+      "crm_relevant": false,
+      "description": "Install the Facebook Pixel and Conversions API in CrowdChange to track donations, retarget visitors, and measure ad performance on Meta.",
+      "word_count": 678,
+      "file": "docs/api/pages/analytics/facebook-pixel.md",
+      "order": 2
+    },
+    {
+      "title": "Pinterest",
+      "slug": "analytics/pinterest",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/analytics/pinterest",
+      "nav_path": [
+        "Documentation",
+        "Analytics & Tracking",
+        "Pinterest"
+      ],
+      "nav_order": 4,
+      "page_type": "guide",
+      "endpoint": null,
+      "http_method": null,
+      "endpoint_path": null,
+      "api_surface": null,
+      "auth": null,
+      "tags": [
+        "analytics-tracking",
+        "donations"
+      ],
+      "crm_relevant": false,
+      "description": "Add the Pinterest Tag and Conversions API to CrowdChange to track pageviews, add-to-cart, and donation checkout events from Pinterest ads.",
+      "word_count": 578,
+      "file": "docs/api/pages/analytics/pinterest.md",
+      "order": 3
+    },
+    {
+      "title": "Reddit",
+      "slug": "analytics/reddit",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/analytics/reddit",
+      "nav_path": [
+        "Documentation",
+        "Analytics & Tracking",
+        "Reddit"
+      ],
+      "nav_order": 5,
+      "page_type": "guide",
+      "endpoint": null,
+      "http_method": null,
+      "endpoint_path": null,
+      "api_surface": null,
+      "auth": null,
+      "tags": [
+        "analytics-tracking",
+        "donations"
+      ],
+      "crm_relevant": false,
+      "description": "Add the Reddit Pixel and Conversions API to CrowdChange to track pageviews, add-to-cart, and donation purchase events from Reddit ads.",
+      "word_count": 554,
+      "file": "docs/api/pages/analytics/reddit.md",
+      "order": 4
+    },
+    {
+      "title": "TikTok",
+      "slug": "analytics/tiktok",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/analytics/tiktok",
+      "nav_path": [
+        "Documentation",
+        "Analytics & Tracking",
+        "TikTok"
+      ],
+      "nav_order": 6,
+      "page_type": "guide",
+      "endpoint": null,
+      "http_method": null,
+      "endpoint_path": null,
+      "api_surface": null,
+      "auth": null,
+      "tags": [
+        "analytics-tracking",
+        "donations",
+        "payments-and-receipts"
+      ],
+      "crm_relevant": false,
+      "description": "Add the TikTok Pixel and Events API to CrowdChange to track pageviews, add-to-cart, and completed donation payment events from TikTok ads.",
+      "word_count": 534,
+      "file": "docs/api/pages/analytics/tiktok.md",
+      "order": 5
+    },
+    {
+      "title": "Widgets Overview",
+      "slug": "widgets/overview",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/widgets/overview",
+      "nav_path": [
+        "Documentation",
+        "Widgets",
+        "Widgets Overview"
+      ],
+      "nav_order": 7,
+      "page_type": "guide",
+      "endpoint": null,
+      "http_method": null,
+      "endpoint_path": null,
+      "api_surface": null,
+      "auth": null,
+      "tags": [
+        "donations",
+        "widgets"
+      ],
+      "crm_relevant": false,
+      "description": "Embed CrowdChange fundraising widgets on your website with a single script tag, then add donation forms, progress bars, and thermometers anywhere on the page.",
+      "word_count": 354,
+      "file": "docs/api/pages/widgets/overview.md",
+      "order": 6
+    },
+    {
+      "title": "Donation Form Widget",
+      "slug": "widgets/donation-form-widget",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/widgets/donation-form-widget",
+      "nav_path": [
+        "Documentation",
+        "Widgets",
+        "Donation Form Widget"
+      ],
+      "nav_order": 8,
+      "page_type": "guide",
+      "endpoint": null,
+      "http_method": null,
+      "endpoint_path": null,
+      "api_surface": null,
+      "auth": null,
+      "tags": [
+        "donations",
+        "widgets"
+      ],
+      "crm_relevant": false,
+      "description": "Embed the CrowdChange donation form on your site to accept donations inline or in a popup, with customizable colors, language, and layout.",
+      "word_count": 546,
+      "file": "docs/api/pages/widgets/donation-form-widget.md",
+      "order": 7
+    },
+    {
+      "title": "Progress Widget",
+      "slug": "widgets/progress-widget",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/widgets/progress-widget",
+      "nav_path": [
+        "Documentation",
+        "Widgets",
+        "Progress Widget"
+      ],
+      "nav_order": 9,
+      "page_type": "guide",
+      "endpoint": null,
+      "http_method": null,
+      "endpoint_path": null,
+      "api_surface": null,
+      "auth": null,
+      "tags": [
+        "peer-to-peer",
+        "teams",
+        "widgets"
+      ],
+      "crm_relevant": false,
+      "description": "Embed the CrowdChange progress widget to display a live fundraising progress bar for any campaign, team, or personal page, with customizable colors.",
+      "word_count": 249,
+      "file": "docs/api/pages/widgets/progress-widget.md",
+      "order": 8
+    },
+    {
+      "title": "Thermometer Widget",
+      "slug": "widgets/thermometer-widget",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/widgets/thermometer-widget",
+      "nav_path": [
+        "Documentation",
+        "Widgets",
+        "Thermometer Widget"
+      ],
+      "nav_order": 10,
+      "page_type": "guide",
+      "endpoint": null,
+      "http_method": null,
+      "endpoint_path": null,
+      "api_surface": null,
+      "auth": null,
+      "tags": [
+        "peer-to-peer",
+        "teams",
+        "widgets"
+      ],
+      "crm_relevant": false,
+      "description": "Embed the CrowdChange thermometer widget to display a live fundraising thermometer with goal and raised amounts for any campaign, team, or personal page.",
+      "word_count": 247,
+      "file": "docs/api/pages/widgets/thermometer-widget.md",
+      "order": 9
+    },
+    {
+      "title": "Overview",
+      "slug": "api-reference/overview",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/overview",
+      "nav_path": [
+        "API Reference",
+        "Introduction",
+        "Overview"
+      ],
+      "nav_order": 11,
+      "page_type": "reference",
+      "endpoint": null,
+      "http_method": null,
+      "endpoint_path": null,
+      "api_surface": null,
+      "auth": null,
+      "tags": [
+        "authentication",
+        "troubleshooting"
+      ],
+      "crm_relevant": true,
+      "description": "Learn how to authenticate with the CrowdChange API, the base URLs, HTTP methods, response codes, date formatting, and error conventions used.",
+      "word_count": 542,
+      "file": "docs/api/pages/api-reference/overview.md",
+      "order": 10
+    },
+    {
+      "title": "Get All",
+      "slug": "api-reference/server-side/transactions/get_v2-private-transactions",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/transactions/get_v2-private-transactions",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "Transactions",
+        "Get All"
+      ],
+      "nav_order": 12,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/private/transactions",
+      "http_method": "GET",
+      "endpoint_path": "/v2/private/transactions",
+      "api_surface": "server-side",
+      "auth": "API key",
+      "tags": [
+        "donations",
+        "payments-and-receipts",
+        "transactions"
+      ],
+      "crm_relevant": true,
+      "description": "Retrieve all CrowdChange transactions within a time window or by payout ID, with full payment processor, donor, and campaign attribution details.",
+      "word_count": 4613,
+      "file": "docs/api/pages/api-reference/server-side/transactions/get_v2-private-transactions.md",
+      "order": 11
+    },
+    {
+      "title": "Find Campaign",
+      "slug": "api-reference/server-side/global-apis/post_v2-private-fundraisers-search",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/global-apis/post_v2-private-fundraisers-search",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "Global APIs",
+        "Find Campaign"
+      ],
+      "nav_order": 13,
+      "page_type": "endpoint",
+      "endpoint": "POST /v2/private/fundraisers/search",
+      "http_method": "POST",
+      "endpoint_path": "/v2/private/fundraisers/search",
+      "api_surface": "server-side",
+      "auth": "API key",
+      "tags": [
+        "donations",
+        "search"
+      ],
+      "crm_relevant": true,
+      "description": "Search CrowdChange campaigns server-side with rich filters and retrieve a paginated list of matching fundraisers with goal, raised, and status data.",
+      "word_count": 844,
+      "file": "docs/api/pages/api-reference/server-side/global-apis/post_v2-private-fundraisers-search.md",
+      "order": 12
+    },
+    {
+      "title": "Find Team",
+      "slug": "api-reference/server-side/global-apis/post_v2-private-teams-search",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/global-apis/post_v2-private-teams-search",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "Global APIs",
+        "Find Team"
+      ],
+      "nav_order": 14,
+      "page_type": "endpoint",
+      "endpoint": "POST /v2/private/teams/search",
+      "http_method": "POST",
+      "endpoint_path": "/v2/private/teams/search",
+      "api_surface": "server-side",
+      "auth": "API key",
+      "tags": [
+        "peer-to-peer",
+        "search",
+        "teams"
+      ],
+      "crm_relevant": true,
+      "description": "Search CrowdChange fundraising teams server-side with rich filters and retrieve a paginated list with captain, goal, and raised totals for each.",
+      "word_count": 792,
+      "file": "docs/api/pages/api-reference/server-side/global-apis/post_v2-private-teams-search.md",
+      "order": 13
+    },
+    {
+      "title": "Find Personal Page",
+      "slug": "api-reference/server-side/global-apis/post_v2-private-personal-pages-search",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/global-apis/post_v2-private-personal-pages-search",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "Global APIs",
+        "Find Personal Page"
+      ],
+      "nav_order": 15,
+      "page_type": "endpoint",
+      "endpoint": "POST /v2/private/personal-pages/search",
+      "http_method": "POST",
+      "endpoint_path": "/v2/private/personal-pages/search",
+      "api_surface": "server-side",
+      "auth": "API key",
+      "tags": [
+        "peer-to-peer",
+        "search"
+      ],
+      "crm_relevant": true,
+      "description": "Search CrowdChange personal fundraising pages server-side with rich filters and retrieve a paginated list with goal, raised, and owner details.",
+      "word_count": 760,
+      "file": "docs/api/pages/api-reference/server-side/global-apis/post_v2-private-personal-pages-search.md",
+      "order": 14
+    },
+    {
+      "title": "Get Campaign",
+      "slug": "api-reference/server-side/campaign-specific-apis/get_v2-private-fundraiser-id",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/campaign-specific-apis/get_v2-private-fundraiser-id",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "Campaign-Specific APIs",
+        "Get Campaign"
+      ],
+      "nav_order": 16,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/private/fundraiser/{id}",
+      "http_method": "GET",
+      "endpoint_path": "/v2/private/fundraiser/{id}",
+      "api_surface": "server-side",
+      "auth": "API key",
+      "tags": [
+        "donations"
+      ],
+      "crm_relevant": true,
+      "description": "Retrieve detailed server-side information about a CrowdChange campaign by its fundraiser ID, including configuration, goal, raised, and donor stats.",
+      "word_count": 587,
+      "file": "docs/api/pages/api-reference/server-side/campaign-specific-apis/get_v2-private-fundraiser-id.md",
+      "order": 15
+    },
+    {
+      "title": "Get Campaign Teams",
+      "slug": "api-reference/server-side/campaign-specific-apis/get_v2-private-fundraiser-id-teams",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/campaign-specific-apis/get_v2-private-fundraiser-id-teams",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "Campaign-Specific APIs",
+        "Get Campaign Teams"
+      ],
+      "nav_order": 17,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/private/fundraiser/{id}/teams",
+      "http_method": "GET",
+      "endpoint_path": "/v2/private/fundraiser/{id}/teams",
+      "api_surface": "server-side",
+      "auth": "API key",
+      "tags": [
+        "peer-to-peer",
+        "registration",
+        "search",
+        "teams"
+      ],
+      "crm_relevant": true,
+      "description": "Search teams registered under a CrowdChange campaign by keyword and retrieve a paginated list with captain, goal, and raised totals for each.",
+      "word_count": 517,
+      "file": "docs/api/pages/api-reference/server-side/campaign-specific-apis/get_v2-private-fundraiser-id-teams.md",
+      "order": 16
+    },
+    {
+      "title": "Create Offline Transaction",
+      "slug": "api-reference/server-side/campaign-specific-apis/post_v2-private-fundraiser-id-offline-donations",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/campaign-specific-apis/post_v2-private-fundraiser-id-offline-donations",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "Campaign-Specific APIs",
+        "Create Offline Transaction"
+      ],
+      "nav_order": 18,
+      "page_type": "endpoint",
+      "endpoint": "POST /v2/private/fundraiser/{id}/offline-donations",
+      "http_method": "POST",
+      "endpoint_path": "/v2/private/fundraiser/{id}/offline-donations",
+      "api_surface": "server-side",
+      "auth": "API key",
+      "tags": [
+        "donations",
+        "offline-donations",
+        "payments-and-receipts",
+        "transactions"
+      ],
+      "crm_relevant": true,
+      "description": "Record an offline donation transaction against a CrowdChange campaign on behalf of a donor, including amount, payment method, and donor details.",
+      "word_count": 302,
+      "file": "docs/api/pages/api-reference/server-side/campaign-specific-apis/post_v2-private-fundraiser-id-offline-donations.md",
+      "order": 17
+    },
+    {
+      "title": "Get offline transactions",
+      "slug": "api-reference/server-side/campaign-specific-apis/get_v2-private-fundraiser-id-offline-donations-list",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/campaign-specific-apis/get_v2-private-fundraiser-id-offline-donations-list",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "Campaign-Specific APIs",
+        "Get offline transactions"
+      ],
+      "nav_order": 19,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/private/fundraiser/{id}/offline-donations/list",
+      "http_method": "GET",
+      "endpoint_path": "/v2/private/fundraiser/{id}/offline-donations/list",
+      "api_surface": "server-side",
+      "auth": "API key",
+      "tags": [
+        "donations",
+        "offline-donations",
+        "reporting-and-data",
+        "transactions"
+      ],
+      "crm_relevant": true,
+      "description": "Retrieve a paginated list of offline donation transactions recorded against a CrowdChange campaign, including amount, donor, and entry metadata.",
+      "word_count": 531,
+      "file": "docs/api/pages/api-reference/server-side/campaign-specific-apis/get_v2-private-fundraiser-id-offline-donations-list.md",
+      "order": 18
+    },
+    {
+      "title": "Sign In",
+      "slug": "api-reference/server-side/user-specific-apis/post_v2-private-user-login",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/user-specific-apis/post_v2-private-user-login",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "User-Specific APIs",
+        "Sign In"
+      ],
+      "nav_order": 20,
+      "page_type": "endpoint",
+      "endpoint": "POST /v2/private/user/login",
+      "http_method": "POST",
+      "endpoint_path": "/v2/private/user/login",
+      "api_surface": "server-side",
+      "auth": "API key",
+      "tags": [
+        "authentication"
+      ],
+      "crm_relevant": true,
+      "description": "Authenticate a CrowdChange user and receive an auth token for user-specific API calls, including the two-factor authentication challenge flow.",
+      "word_count": 250,
+      "file": "docs/api/pages/api-reference/server-side/user-specific-apis/post_v2-private-user-login.md",
+      "order": 19
+    },
+    {
+      "title": "Sign Out",
+      "slug": "api-reference/server-side/user-specific-apis/post_v2-private-user-logout",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/user-specific-apis/post_v2-private-user-logout",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "User-Specific APIs",
+        "Sign Out"
+      ],
+      "nav_order": 21,
+      "page_type": "endpoint",
+      "endpoint": "POST /v2/private/user/logout",
+      "http_method": "POST",
+      "endpoint_path": "/v2/private/user/logout",
+      "api_surface": "server-side",
+      "auth": "API key + user token",
+      "tags": [
+        "authentication"
+      ],
+      "crm_relevant": true,
+      "description": "Invalidate the current CrowdChange auth token to sign the authenticated user out of the active session on a single device or client.",
+      "word_count": 117,
+      "file": "docs/api/pages/api-reference/server-side/user-specific-apis/post_v2-private-user-logout.md",
+      "order": 20
+    },
+    {
+      "title": "Sign Out All Devices",
+      "slug": "api-reference/server-side/user-specific-apis/post_v2-private-user-logout-all",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/user-specific-apis/post_v2-private-user-logout-all",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "User-Specific APIs",
+        "Sign Out All Devices"
+      ],
+      "nav_order": 22,
+      "page_type": "endpoint",
+      "endpoint": "POST /v2/private/user/logout/all",
+      "http_method": "POST",
+      "endpoint_path": "/v2/private/user/logout/all",
+      "api_surface": "server-side",
+      "auth": "API key + user token",
+      "tags": [
+        "authentication"
+      ],
+      "crm_relevant": true,
+      "description": "Invalidate every active auth token for the authenticated CrowdChange user, signing them out of all devices and sessions in a single call.",
+      "word_count": 119,
+      "file": "docs/api/pages/api-reference/server-side/user-specific-apis/post_v2-private-user-logout-all.md",
+      "order": 21
+    },
+    {
+      "title": "Upload Image",
+      "slug": "api-reference/server-side/user-specific-apis/post_v2-private-user-upload-image",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/user-specific-apis/post_v2-private-user-upload-image",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "User-Specific APIs",
+        "Upload Image"
+      ],
+      "nav_order": 23,
+      "page_type": "endpoint",
+      "endpoint": "POST /v2/private/user/upload/image",
+      "http_method": "POST",
+      "endpoint_path": "/v2/private/user/upload/image",
+      "api_surface": "server-side",
+      "auth": "API key + user token",
+      "tags": [
+        "page-design",
+        "peer-to-peer",
+        "teams"
+      ],
+      "crm_relevant": true,
+      "description": "Upload an image file to CrowdChange on behalf of the authenticated user, returning a hosted URL you can attach to personal pages or teams.",
+      "word_count": 148,
+      "file": "docs/api/pages/api-reference/server-side/user-specific-apis/post_v2-private-user-upload-image.md",
+      "order": 22
+    },
+    {
+      "title": "Get Campaigns",
+      "slug": "api-reference/server-side/user-specific-apis/get_v2-private-user-fundraisers",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/user-specific-apis/get_v2-private-user-fundraisers",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "User-Specific APIs",
+        "Get Campaigns"
+      ],
+      "nav_order": 24,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/private/user/fundraisers",
+      "http_method": "GET",
+      "endpoint_path": "/v2/private/user/fundraisers",
+      "api_surface": "server-side",
+      "auth": "API key + user token",
+      "tags": [
+        "registration"
+      ],
+      "crm_relevant": true,
+      "description": "Retrieve a paginated list of CrowdChange campaigns where the authenticated user is registered, including role, goal, and amount raised per campaign.",
+      "word_count": 646,
+      "file": "docs/api/pages/api-reference/server-side/user-specific-apis/get_v2-private-user-fundraisers.md",
+      "order": 23
+    },
+    {
+      "title": "Get Personal Pages",
+      "slug": "api-reference/server-side/user-specific-apis/get_v2-private-user-personal-pages",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/user-specific-apis/get_v2-private-user-personal-pages",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "User-Specific APIs",
+        "Get Personal Pages"
+      ],
+      "nav_order": 25,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/private/user/personal-pages",
+      "http_method": "GET",
+      "endpoint_path": "/v2/private/user/personal-pages",
+      "api_surface": "server-side",
+      "auth": "API key + user token",
+      "tags": [
+        "peer-to-peer"
+      ],
+      "crm_relevant": true,
+      "description": "Retrieve a paginated list of the authenticated user's personal fundraising pages across all CrowdChange campaigns, with goals and raised amounts.",
+      "word_count": 690,
+      "file": "docs/api/pages/api-reference/server-side/user-specific-apis/get_v2-private-user-personal-pages.md",
+      "order": 24
+    },
+    {
+      "title": "Get Teams",
+      "slug": "api-reference/server-side/user-specific-apis/get_v2-private-user-teams",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/user-specific-apis/get_v2-private-user-teams",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "User-Specific APIs",
+        "Get Teams"
+      ],
+      "nav_order": 26,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/private/user/teams",
+      "http_method": "GET",
+      "endpoint_path": "/v2/private/user/teams",
+      "api_surface": "server-side",
+      "auth": "API key + user token",
+      "tags": [
+        "peer-to-peer",
+        "teams"
+      ],
+      "crm_relevant": true,
+      "description": "Retrieve a paginated list of CrowdChange fundraising teams the authenticated user belongs to, including role, campaign, goal, and raised totals.",
+      "word_count": 568,
+      "file": "docs/api/pages/api-reference/server-side/user-specific-apis/get_v2-private-user-teams.md",
+      "order": 25
+    },
+    {
+      "title": "Get Team's Personal Pages",
+      "slug": "api-reference/server-side/user-specific-apis/get_v2-private-user-fundraiser-id-team-teamid-personal-pages",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/user-specific-apis/get_v2-private-user-fundraiser-id-team-teamid-personal-pages",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "User-Specific APIs",
+        "Get Team's Personal Pages"
+      ],
+      "nav_order": 27,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/private/user/fundraiser/{id}/team/{teamId}/personal-pages",
+      "http_method": "GET",
+      "endpoint_path": "/v2/private/user/fundraiser/{id}/team/{teamId}/personal-pages",
+      "api_surface": "server-side",
+      "auth": "API key + user token",
+      "tags": [
+        "peer-to-peer",
+        "registration",
+        "teams"
+      ],
+      "crm_relevant": true,
+      "description": "Retrieve a paginated list of personal fundraising pages registered under the authenticated user's team within a CrowdChange campaign.",
+      "word_count": 712,
+      "file": "docs/api/pages/api-reference/server-side/user-specific-apis/get_v2-private-user-fundraiser-id-team-teamid-personal-pages.md",
+      "order": 26
+    },
+    {
+      "title": "Update Personal Page",
+      "slug": "api-reference/server-side/user-specific-apis/put_v2-private-user-fundraiser-id-personal-page-pageid",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/user-specific-apis/put_v2-private-user-fundraiser-id-personal-page-pageid",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "User-Specific APIs",
+        "Update Personal Page"
+      ],
+      "nav_order": 28,
+      "page_type": "endpoint",
+      "endpoint": "PUT /v2/private/user/fundraiser/{id}/personal-page/{pageId}",
+      "http_method": "PUT",
+      "endpoint_path": "/v2/private/user/fundraiser/{id}/personal-page/{pageId}",
+      "api_surface": "server-side",
+      "auth": "API key + user token",
+      "tags": [
+        "page-design",
+        "peer-to-peer"
+      ],
+      "crm_relevant": true,
+      "description": "Update the authenticated user's personal fundraising page within a CrowdChange campaign, including title, story, goal, and cover image.",
+      "word_count": 665,
+      "file": "docs/api/pages/api-reference/server-side/user-specific-apis/put_v2-private-user-fundraiser-id-personal-page-pageid.md",
+      "order": 27
+    },
+    {
+      "title": "Update Team",
+      "slug": "api-reference/server-side/user-specific-apis/put_v2-private-user-fundraiser-id-team-teamid",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/user-specific-apis/put_v2-private-user-fundraiser-id-team-teamid",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "User-Specific APIs",
+        "Update Team"
+      ],
+      "nav_order": 29,
+      "page_type": "endpoint",
+      "endpoint": "PUT /v2/private/user/fundraiser/{id}/team/{teamId}",
+      "http_method": "PUT",
+      "endpoint_path": "/v2/private/user/fundraiser/{id}/team/{teamId}",
+      "api_surface": "server-side",
+      "auth": "API key + user token",
+      "tags": [
+        "page-design",
+        "peer-to-peer",
+        "teams"
+      ],
+      "crm_relevant": true,
+      "description": "Update the authenticated user's CrowdChange fundraising team within a campaign, including name, description, goal, and team cover image.",
+      "word_count": 545,
+      "file": "docs/api/pages/api-reference/server-side/user-specific-apis/put_v2-private-user-fundraiser-id-team-teamid.md",
+      "order": 28
+    },
+    {
+      "title": "Page Donors List",
+      "slug": "api-reference/server-side/user-specific-apis/get_v2-private-user-fundraiser-id-personal-page-pageid-donors",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/user-specific-apis/get_v2-private-user-fundraiser-id-personal-page-pageid-donors",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "User-Specific APIs",
+        "Page Donors List"
+      ],
+      "nav_order": 30,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/private/user/fundraiser/{id}/personal-page/{pageId}/donors",
+      "http_method": "GET",
+      "endpoint_path": "/v2/private/user/fundraiser/{id}/personal-page/{pageId}/donors",
+      "api_surface": "server-side",
+      "auth": "API key + user token",
+      "tags": [
+        "donations",
+        "peer-to-peer"
+      ],
+      "crm_relevant": true,
+      "description": "Retrieve a paginated list of donors for the authenticated user's personal page within a campaign, returning 10 donors per page with amount details.",
+      "word_count": 256,
+      "file": "docs/api/pages/api-reference/server-side/user-specific-apis/get_v2-private-user-fundraiser-id-personal-page-pageid-donors.md",
+      "order": 29
+    },
+    {
+      "title": "Create Offline Transaction",
+      "slug": "api-reference/server-side/user-specific-apis/post_v2-private-user-fundraiser-id-offline-donation",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/user-specific-apis/post_v2-private-user-fundraiser-id-offline-donation",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "User-Specific APIs",
+        "Create Offline Transaction"
+      ],
+      "nav_order": 31,
+      "page_type": "endpoint",
+      "endpoint": "POST /v2/private/user/fundraiser/{id}/offline-donation",
+      "http_method": "POST",
+      "endpoint_path": "/v2/private/user/fundraiser/{id}/offline-donation",
+      "api_surface": "server-side",
+      "auth": "API key + user token",
+      "tags": [
+        "donations",
+        "offline-donations",
+        "transactions"
+      ],
+      "crm_relevant": true,
+      "description": "Record an offline donation transaction on behalf of the authenticated user against a CrowdChange campaign, with amount and donor details.",
+      "word_count": 273,
+      "file": "docs/api/pages/api-reference/server-side/user-specific-apis/post_v2-private-user-fundraiser-id-offline-donation.md",
+      "order": 30
+    },
+    {
+      "title": "Team Donors List",
+      "slug": "api-reference/server-side/user-specific-apis/get_v2-private-user-fundraiser-id-team-teamid-donors",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/user-specific-apis/get_v2-private-user-fundraiser-id-team-teamid-donors",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "User-Specific APIs",
+        "Team Donors List"
+      ],
+      "nav_order": 32,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/private/user/fundraiser/{id}/team/{teamId}/donors",
+      "http_method": "GET",
+      "endpoint_path": "/v2/private/user/fundraiser/{id}/team/{teamId}/donors",
+      "api_surface": "server-side",
+      "auth": "API key + user token",
+      "tags": [
+        "donations",
+        "peer-to-peer",
+        "teams"
+      ],
+      "crm_relevant": true,
+      "description": "Retrieve a paginated list of donors for the authenticated user's team within a campaign, returning 10 donors per page with names and amounts.",
+      "word_count": 254,
+      "file": "docs/api/pages/api-reference/server-side/user-specific-apis/get_v2-private-user-fundraiser-id-team-teamid-donors.md",
+      "order": 31
+    },
+    {
+      "title": "Subscribe Webhook",
+      "slug": "api-reference/server-side/webhooks/post_v2-private-webhooks-subscribe",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/webhooks/post_v2-private-webhooks-subscribe",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "Webhooks",
+        "Subscribe Webhook"
+      ],
+      "nav_order": 33,
+      "page_type": "endpoint",
+      "endpoint": "POST /v2/private/webhooks/subscribe",
+      "http_method": "POST",
+      "endpoint_path": "/v2/private/webhooks/subscribe",
+      "api_surface": "server-side",
+      "auth": "API key",
+      "tags": [
+        "registration",
+        "webhooks"
+      ],
+      "crm_relevant": true,
+      "description": "Register a new CrowdChange webhook subscription pointing at your target URL to start receiving event payloads from the fundraising platform.",
+      "word_count": 230,
+      "file": "docs/api/pages/api-reference/server-side/webhooks/post_v2-private-webhooks-subscribe.md",
+      "order": 32
+    },
+    {
+      "title": "Unsubscribe webhook",
+      "slug": "api-reference/server-side/webhooks/post_v2-private-webhooks-unsubscribe",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/webhooks/post_v2-private-webhooks-unsubscribe",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "Webhooks",
+        "Unsubscribe webhook"
+      ],
+      "nav_order": 34,
+      "page_type": "endpoint",
+      "endpoint": "POST /v2/private/webhooks/unsubscribe",
+      "http_method": "POST",
+      "endpoint_path": "/v2/private/webhooks/unsubscribe",
+      "api_surface": "server-side",
+      "auth": "API key",
+      "tags": [
+        "webhooks"
+      ],
+      "crm_relevant": true,
+      "description": "Remove an existing CrowdChange webhook subscription so the target URL stops receiving event payloads from the fundraising platform.",
+      "word_count": 112,
+      "file": "docs/api/pages/api-reference/server-side/webhooks/post_v2-private-webhooks-unsubscribe.md",
+      "order": 33
+    },
+    {
+      "title": "Get webhooks",
+      "slug": "api-reference/server-side/webhooks/get_v2-private-webhooks",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/webhooks/get_v2-private-webhooks",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "Webhooks",
+        "Get webhooks"
+      ],
+      "nav_order": 35,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/private/webhooks",
+      "http_method": "GET",
+      "endpoint_path": "/v2/private/webhooks",
+      "api_surface": "server-side",
+      "auth": "API key",
+      "tags": [
+        "registration",
+        "webhooks"
+      ],
+      "crm_relevant": true,
+      "description": "Retrieve a paginated list of every CrowdChange webhook subscription registered on your account, with target URL, subscribed events, and status.",
+      "word_count": 204,
+      "file": "docs/api/pages/api-reference/server-side/webhooks/get_v2-private-webhooks.md",
+      "order": 34
+    },
+    {
+      "title": "Subscribe Webhook events",
+      "slug": "api-reference/server-side/webhooks/put_v2-private-webhooks-id-events-subscribe",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/webhooks/put_v2-private-webhooks-id-events-subscribe",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "Webhooks",
+        "Subscribe Webhook events"
+      ],
+      "nav_order": 36,
+      "page_type": "endpoint",
+      "endpoint": "PUT /v2/private/webhooks/{webhookId}/events/subscribe",
+      "http_method": "PUT",
+      "endpoint_path": "/v2/private/webhooks/{webhookId}/events/subscribe",
+      "api_surface": "server-side",
+      "auth": "API key",
+      "tags": [
+        "webhooks"
+      ],
+      "crm_relevant": true,
+      "description": "Add specific CrowdChange system events to an existing webhook subscription so the target URL starts receiving those event payloads.",
+      "word_count": 205,
+      "file": "docs/api/pages/api-reference/server-side/webhooks/put_v2-private-webhooks-id-events-subscribe.md",
+      "order": 35
+    },
+    {
+      "title": "Unsubscribe Webhook events",
+      "slug": "api-reference/server-side/webhooks/put_v2-private-webhooks-id-events-unsubscribe",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/webhooks/put_v2-private-webhooks-id-events-unsubscribe",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "Webhooks",
+        "Unsubscribe Webhook events"
+      ],
+      "nav_order": 37,
+      "page_type": "endpoint",
+      "endpoint": "PUT /v2/private/webhooks/{webhookId}/events/unsubscribe",
+      "http_method": "PUT",
+      "endpoint_path": "/v2/private/webhooks/{webhookId}/events/unsubscribe",
+      "api_surface": "server-side",
+      "auth": "API key",
+      "tags": [
+        "webhooks"
+      ],
+      "crm_relevant": true,
+      "description": "Remove specific CrowdChange system events from an existing webhook subscription so the target URL stops receiving those event payloads.",
+      "word_count": 205,
+      "file": "docs/api/pages/api-reference/server-side/webhooks/put_v2-private-webhooks-id-events-unsubscribe.md",
+      "order": 36
+    },
+    {
+      "title": "Get logs",
+      "slug": "api-reference/server-side/webhooks/get_v2-private-webhooks-id-logs",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/webhooks/get_v2-private-webhooks-id-logs",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "Webhooks",
+        "Get logs"
+      ],
+      "nav_order": 38,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/private/webhooks/{webhookId}/logs",
+      "http_method": "GET",
+      "endpoint_path": "/v2/private/webhooks/{webhookId}/logs",
+      "api_surface": "server-side",
+      "auth": "API key",
+      "tags": [
+        "webhooks"
+      ],
+      "crm_relevant": true,
+      "description": "Retrieve a paginated log of webhook delivery attempts for a CrowdChange webhook subscription, including event type, status, and response details.",
+      "word_count": 282,
+      "file": "docs/api/pages/api-reference/server-side/webhooks/get_v2-private-webhooks-id-logs.md",
+      "order": 37
+    },
+    {
+      "title": "Resend logged event",
+      "slug": "api-reference/server-side/webhooks/post_v2-private-webhooks-id-logs-logid-resend",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/webhooks/post_v2-private-webhooks-id-logs-logid-resend",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "Webhooks",
+        "Resend logged event"
+      ],
+      "nav_order": 39,
+      "page_type": "endpoint",
+      "endpoint": "POST /v2/private/webhooks/{webhookId}/logs/{logId}/resend",
+      "http_method": "POST",
+      "endpoint_path": "/v2/private/webhooks/{webhookId}/logs/{logId}/resend",
+      "api_surface": "server-side",
+      "auth": "API key",
+      "tags": [
+        "troubleshooting",
+        "webhooks"
+      ],
+      "crm_relevant": true,
+      "description": "Resend a previously logged CrowdChange webhook event to its subscriber URL, useful for retrying failed deliveries or debugging webhook handlers.",
+      "word_count": 128,
+      "file": "docs/api/pages/api-reference/server-side/webhooks/post_v2-private-webhooks-id-logs-logid-resend.md",
+      "order": 38
+    },
+    {
+      "title": "Resend event by payload hash",
+      "slug": "api-reference/server-side/webhooks/post_v2-private-webhooks-id-logs-hash-payloadhash-resend",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/webhooks/post_v2-private-webhooks-id-logs-hash-payloadhash-resend",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "Webhooks",
+        "Resend event by payload hash"
+      ],
+      "nav_order": 40,
+      "page_type": "endpoint",
+      "endpoint": "POST /v2/private/webhooks/{webhookId}/logs/hash/{payloadHash}/resend",
+      "http_method": "POST",
+      "endpoint_path": "/v2/private/webhooks/{webhookId}/logs/hash/{payloadHash}/resend",
+      "api_surface": "server-side",
+      "auth": "API key",
+      "tags": [
+        "webhooks"
+      ],
+      "crm_relevant": true,
+      "description": "Resend the newest logged CrowdChange webhook delivery that matches a payload hash, creating a new delivery attempt with the same payload.",
+      "word_count": 188,
+      "file": "docs/api/pages/api-reference/server-side/webhooks/post_v2-private-webhooks-id-logs-hash-payloadhash-resend.md",
+      "order": 39
+    },
+    {
+      "title": "Send event",
+      "slug": "api-reference/server-side/webhooks/post_v2-private-webhooks-id-events-send",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/webhooks/post_v2-private-webhooks-id-events-send",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "Webhooks",
+        "Send event"
+      ],
+      "nav_order": 41,
+      "page_type": "endpoint",
+      "endpoint": "POST /v2/private/webhooks/{webhookId}/events/send",
+      "http_method": "POST",
+      "endpoint_path": "/v2/private/webhooks/{webhookId}/events/send",
+      "api_surface": "server-side",
+      "auth": "API key",
+      "tags": [
+        "webhooks"
+      ],
+      "crm_relevant": true,
+      "description": "Trigger a CrowdChange webhook to fire an event payload based on an existing entity, useful for testing endpoints and replaying historical data.",
+      "word_count": 282,
+      "file": "docs/api/pages/api-reference/server-side/webhooks/post_v2-private-webhooks-id-events-send.md",
+      "order": 40
+    },
+    {
+      "title": "Event payloads",
+      "slug": "api-reference/server-side/webhooks/event-payloads",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/server-side/webhooks/event-payloads",
+      "nav_path": [
+        "API Reference",
+        "Server Side APIs",
+        "Webhook Reference",
+        "Event payloads"
+      ],
+      "nav_order": 42,
+      "page_type": "reference",
+      "endpoint": null,
+      "http_method": null,
+      "endpoint_path": null,
+      "api_surface": "server-side",
+      "auth": null,
+      "tags": [
+        "webhooks"
+      ],
+      "crm_relevant": true,
+      "description": "Reference the JSON payloads sent by CrowdChange webhook events.",
+      "word_count": 1980,
+      "file": "docs/api/pages/api-reference/server-side/webhooks/event-payloads.md",
+      "order": 41
+    },
+    {
+      "title": "Goal / Raised Amounts",
+      "slug": "api-reference/client-side/campaign-specific-apis/get_v2-client-fundraiser-id",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/client-side/campaign-specific-apis/get_v2-client-fundraiser-id",
+      "nav_path": [
+        "API Reference",
+        "Client Side APIs",
+        "Campaign-Specific APIs",
+        "Goal / Raised Amounts"
+      ],
+      "nav_order": 43,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/client/fundraiser/{id}",
+      "http_method": "GET",
+      "endpoint_path": "/v2/client/fundraiser/{id}",
+      "api_surface": "client-side",
+      "auth": "API key",
+      "tags": [
+        "donations"
+      ],
+      "crm_relevant": false,
+      "description": "Retrieve the goal amount, raised amount, donor count, and core campaign metadata for a specific CrowdChange campaign by its fundraiser ID.",
+      "word_count": 285,
+      "file": "docs/api/pages/api-reference/client-side/campaign-specific-apis/get_v2-client-fundraiser-id.md",
+      "order": 42
+    },
+    {
+      "title": "Donors List",
+      "slug": "api-reference/client-side/campaign-specific-apis/get_v2-client-fundraiser-id-donors",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/client-side/campaign-specific-apis/get_v2-client-fundraiser-id-donors",
+      "nav_path": [
+        "API Reference",
+        "Client Side APIs",
+        "Campaign-Specific APIs",
+        "Donors List"
+      ],
+      "nav_order": 44,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/client/fundraiser/{id}/donors",
+      "http_method": "GET",
+      "endpoint_path": "/v2/client/fundraiser/{id}/donors",
+      "api_surface": "client-side",
+      "auth": "API key",
+      "tags": [
+        "donations"
+      ],
+      "crm_relevant": false,
+      "description": "Retrieve a paginated list of donors for a specific CrowdChange campaign, returning 10 donor records per page with name, amount, and donation date.",
+      "word_count": 252,
+      "file": "docs/api/pages/api-reference/client-side/campaign-specific-apis/get_v2-client-fundraiser-id-donors.md",
+      "order": 43
+    },
+    {
+      "title": "Heatmap",
+      "slug": "api-reference/client-side/campaign-specific-apis/get_v2-client-fundraiser-id-heatmap",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/client-side/campaign-specific-apis/get_v2-client-fundraiser-id-heatmap",
+      "nav_path": [
+        "API Reference",
+        "Client Side APIs",
+        "Campaign-Specific APIs",
+        "Heatmap"
+      ],
+      "nav_order": 45,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/client/fundraiser/{id}/heatmap",
+      "http_method": "GET",
+      "endpoint_path": "/v2/client/fundraiser/{id}/heatmap",
+      "api_surface": "client-side",
+      "auth": "API key",
+      "tags": [
+        "donations"
+      ],
+      "crm_relevant": false,
+      "description": "Retrieve aggregated donation counts and amounts raised by country and state for a CrowdChange campaign, suitable for rendering a geographic heatmap.",
+      "word_count": 121,
+      "file": "docs/api/pages/api-reference/client-side/campaign-specific-apis/get_v2-client-fundraiser-id-heatmap.md",
+      "order": 44
+    },
+    {
+      "title": "Team Donors List",
+      "slug": "api-reference/client-side/campaign-specific-apis/get_v2-client-fundraiser-id-team-teamid-donors",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/client-side/campaign-specific-apis/get_v2-client-fundraiser-id-team-teamid-donors",
+      "nav_path": [
+        "API Reference",
+        "Client Side APIs",
+        "Campaign-Specific APIs",
+        "Team Donors List"
+      ],
+      "nav_order": 46,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/client/fundraiser/{id}/team/{teamId}/donors",
+      "http_method": "GET",
+      "endpoint_path": "/v2/client/fundraiser/{id}/team/{teamId}/donors",
+      "api_surface": "client-side",
+      "auth": "API key",
+      "tags": [
+        "donations",
+        "peer-to-peer",
+        "teams"
+      ],
+      "crm_relevant": false,
+      "description": "Retrieve a paginated list of donors for a specific team within a CrowdChange campaign, returning 10 donors per page with names and donation amounts.",
+      "word_count": 262,
+      "file": "docs/api/pages/api-reference/client-side/campaign-specific-apis/get_v2-client-fundraiser-id-team-teamid-donors.md",
+      "order": 45
+    },
+    {
+      "title": "Page Donors List",
+      "slug": "api-reference/client-side/campaign-specific-apis/get_v2-client-fundraiser-id-personal-page-pageid-donors",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/client-side/campaign-specific-apis/get_v2-client-fundraiser-id-personal-page-pageid-donors",
+      "nav_path": [
+        "API Reference",
+        "Client Side APIs",
+        "Campaign-Specific APIs",
+        "Page Donors List"
+      ],
+      "nav_order": 47,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/client/fundraiser/{id}/personal-page/{pageId}/donors",
+      "http_method": "GET",
+      "endpoint_path": "/v2/client/fundraiser/{id}/personal-page/{pageId}/donors",
+      "api_surface": "client-side",
+      "auth": "API key",
+      "tags": [
+        "donations",
+        "peer-to-peer"
+      ],
+      "crm_relevant": false,
+      "description": "Retrieve a paginated list of donors for a personal fundraising page within a CrowdChange campaign, returning 10 donors per page with amount details.",
+      "word_count": 263,
+      "file": "docs/api/pages/api-reference/client-side/campaign-specific-apis/get_v2-client-fundraiser-id-personal-page-pageid-donors.md",
+      "order": 46
+    },
+    {
+      "title": "Find Campaign",
+      "slug": "api-reference/client-side/global-apis/get_v2-client-fundraisers-search",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/client-side/global-apis/get_v2-client-fundraisers-search",
+      "nav_path": [
+        "API Reference",
+        "Client Side APIs",
+        "Global APIs",
+        "Find Campaign"
+      ],
+      "nav_order": 48,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/client/fundraisers/search",
+      "http_method": "GET",
+      "endpoint_path": "/v2/client/fundraisers/search",
+      "api_surface": "client-side",
+      "auth": "API key",
+      "tags": [
+        "donations",
+        "search"
+      ],
+      "crm_relevant": false,
+      "description": "Search CrowdChange campaigns by keyword and retrieve a paginated list of matching fundraisers with goal, raised, and status data for each.",
+      "word_count": 465,
+      "file": "docs/api/pages/api-reference/client-side/global-apis/get_v2-client-fundraisers-search.md",
+      "order": 47
+    },
+    {
+      "title": "Find Team",
+      "slug": "api-reference/client-side/global-apis/get_v2-client-teams-search",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/client-side/global-apis/get_v2-client-teams-search",
+      "nav_path": [
+        "API Reference",
+        "Client Side APIs",
+        "Global APIs",
+        "Find Team"
+      ],
+      "nav_order": 49,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/client/teams/search",
+      "http_method": "GET",
+      "endpoint_path": "/v2/client/teams/search",
+      "api_surface": "client-side",
+      "auth": "API key",
+      "tags": [
+        "donations",
+        "peer-to-peer",
+        "search",
+        "teams"
+      ],
+      "crm_relevant": false,
+      "description": "Search CrowdChange fundraising teams by keyword and retrieve a paginated list of matching teams with goal, raised amount, and campaign details.",
+      "word_count": 522,
+      "file": "docs/api/pages/api-reference/client-side/global-apis/get_v2-client-teams-search.md",
+      "order": 48
+    },
+    {
+      "title": "Get Team",
+      "slug": "api-reference/client-side/global-apis/get_v2-client-teams-id",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/client-side/global-apis/get_v2-client-teams-id",
+      "nav_path": [
+        "API Reference",
+        "Client Side APIs",
+        "Global APIs",
+        "Get Team"
+      ],
+      "nav_order": 50,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/client/teams/{id}",
+      "http_method": "GET",
+      "endpoint_path": "/v2/client/teams/{id}",
+      "api_surface": "client-side",
+      "auth": "API key",
+      "tags": [
+        "peer-to-peer",
+        "teams"
+      ],
+      "crm_relevant": false,
+      "description": "Retrieve a single CrowdChange fundraising team by ID, including parent campaign, captain, member count, goal, and total raised so far.",
+      "word_count": 403,
+      "file": "docs/api/pages/api-reference/client-side/global-apis/get_v2-client-teams-id.md",
+      "order": 49
+    },
+    {
+      "title": "Find Personal Page",
+      "slug": "api-reference/client-side/global-apis/get_v2-client-personal-pages-search",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/client-side/global-apis/get_v2-client-personal-pages-search",
+      "nav_path": [
+        "API Reference",
+        "Client Side APIs",
+        "Global APIs",
+        "Find Personal Page"
+      ],
+      "nav_order": 51,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/client/personal-pages/search",
+      "http_method": "GET",
+      "endpoint_path": "/v2/client/personal-pages/search",
+      "api_surface": "client-side",
+      "auth": "API key",
+      "tags": [
+        "peer-to-peer",
+        "search"
+      ],
+      "crm_relevant": false,
+      "description": "Search public CrowdChange personal fundraising pages by keyword and retrieve a paginated list of matches with goal, raised, and owner details.",
+      "word_count": 660,
+      "file": "docs/api/pages/api-reference/client-side/global-apis/get_v2-client-personal-pages-search.md",
+      "order": 50
+    },
+    {
+      "title": "Get Personal Page",
+      "slug": "api-reference/client-side/global-apis/get_v2-client-personal-pages-id",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/client-side/global-apis/get_v2-client-personal-pages-id",
+      "nav_path": [
+        "API Reference",
+        "Client Side APIs",
+        "Global APIs",
+        "Get Personal Page"
+      ],
+      "nav_order": 52,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/client/personal-pages/{id}",
+      "http_method": "GET",
+      "endpoint_path": "/v2/client/personal-pages/{id}",
+      "api_surface": "client-side",
+      "auth": "API key",
+      "tags": [
+        "activity-tracking",
+        "donations",
+        "peer-to-peer"
+      ],
+      "crm_relevant": false,
+      "description": "Retrieve a single CrowdChange personal fundraising page by ID, including owner, parent campaign, goal, raised amount, and recent donor activity.",
+      "word_count": 529,
+      "file": "docs/api/pages/api-reference/client-side/global-apis/get_v2-client-personal-pages-id.md",
+      "order": 51
+    },
+    {
+      "title": "Activities Leaderboard",
+      "slug": "api-reference/client-side/global-apis/get_v2-client-activity-trackers-leaderboard",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/client-side/global-apis/get_v2-client-activity-trackers-leaderboard",
+      "nav_path": [
+        "API Reference",
+        "Client Side APIs",
+        "Global APIs",
+        "Activities Leaderboard"
+      ],
+      "nav_order": 53,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/client/activity-trackers/leaderboard",
+      "http_method": "GET",
+      "endpoint_path": "/v2/client/activity-trackers/leaderboard",
+      "api_surface": "client-side",
+      "auth": "API key",
+      "tags": [
+        "activity-tracking",
+        "leaderboards",
+        "peer-to-peer",
+        "registration"
+      ],
+      "crm_relevant": false,
+      "description": "Retrieve the activity tracker leaderboard of personal pages, returning 10 participants per page ranked by tracked steps, distance, or minutes.",
+      "word_count": 272,
+      "file": "docs/api/pages/api-reference/client-side/global-apis/get_v2-client-activity-trackers-leaderboard.md",
+      "order": 52
+    },
+    {
+      "title": "Activities Teams Leaderboard",
+      "slug": "api-reference/client-side/global-apis/get_v2-client-activity-trackers-leaderboard-teams",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/client-side/global-apis/get_v2-client-activity-trackers-leaderboard-teams",
+      "nav_path": [
+        "API Reference",
+        "Client Side APIs",
+        "Global APIs",
+        "Activities Teams Leaderboard"
+      ],
+      "nav_order": 54,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/client/activity-trackers/leaderboard/teams",
+      "http_method": "GET",
+      "endpoint_path": "/v2/client/activity-trackers/leaderboard/teams",
+      "api_surface": "client-side",
+      "auth": "API key",
+      "tags": [
+        "activity-tracking",
+        "leaderboards",
+        "peer-to-peer",
+        "teams"
+      ],
+      "crm_relevant": false,
+      "description": "Retrieve the activity tracker teams leaderboard with up to 10 teams per page, ranked by tracked steps, distance, or activity minutes raised.",
+      "word_count": 253,
+      "file": "docs/api/pages/api-reference/client-side/global-apis/get_v2-client-activity-trackers-leaderboard-teams.md",
+      "order": 53
+    },
+    {
+      "title": "Activities Campaigns Leaderboard",
+      "slug": "api-reference/client-side/global-apis/get_v2-client-activity-trackers-leaderboard-fundraisers",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/client-side/global-apis/get_v2-client-activity-trackers-leaderboard-fundraisers",
+      "nav_path": [
+        "API Reference",
+        "Client Side APIs",
+        "Global APIs",
+        "Activities Campaigns Leaderboard"
+      ],
+      "nav_order": 55,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/client/activity-trackers/leaderboard/fundraisers",
+      "http_method": "GET",
+      "endpoint_path": "/v2/client/activity-trackers/leaderboard/fundraisers",
+      "api_surface": "client-side",
+      "auth": "API key",
+      "tags": [
+        "activity-tracking",
+        "leaderboards",
+        "peer-to-peer"
+      ],
+      "crm_relevant": false,
+      "description": "Retrieve the activity tracker campaigns leaderboard with up to 10 fundraisers per page, ranked by tracked steps, distance, or activity minutes.",
+      "word_count": 242,
+      "file": "docs/api/pages/api-reference/client-side/global-apis/get_v2-client-activity-trackers-leaderboard-fundraisers.md",
+      "order": 54
+    },
+    {
+      "title": "Site wide stats",
+      "slug": "api-reference/client-side/global-apis/get_v2-client-wl-stats",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/client-side/global-apis/get_v2-client-wl-stats",
+      "nav_path": [
+        "API Reference",
+        "Client Side APIs",
+        "Global APIs",
+        "Site wide stats"
+      ],
+      "nav_order": 56,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/client/wl/stats",
+      "http_method": "GET",
+      "endpoint_path": "/v2/client/wl/stats",
+      "api_surface": "client-side",
+      "auth": "API key",
+      "tags": [
+        "donations"
+      ],
+      "crm_relevant": false,
+      "description": "Retrieve site-wide aggregated stats across all CrowdChange campaigns, including total raised, donor count, and number of active fundraisers.",
+      "word_count": 137,
+      "file": "docs/api/pages/api-reference/client-side/global-apis/get_v2-client-wl-stats.md",
+      "order": 55
+    },
+    {
+      "title": "Top Daily Campaigns",
+      "slug": "api-reference/client-side/top-daily/get_v2-client-fundraisers-top-daily",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/client-side/top-daily/get_v2-client-fundraisers-top-daily",
+      "nav_path": [
+        "API Reference",
+        "Client Side APIs",
+        "Top Daily",
+        "Top Daily Campaigns"
+      ],
+      "nav_order": 57,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/client/fundraisers/top/daily",
+      "http_method": "GET",
+      "endpoint_path": "/v2/client/fundraisers/top/daily",
+      "api_surface": "client-side",
+      "auth": "API key",
+      "tags": [
+        "leaderboards",
+        "peer-to-peer",
+        "widgets"
+      ],
+      "crm_relevant": false,
+      "description": "Retrieve the daily ranking of top CrowdChange campaigns by amount raised over the last 24 hours, ideal for a leaderboard or homepage widget.",
+      "word_count": 386,
+      "file": "docs/api/pages/api-reference/client-side/top-daily/get_v2-client-fundraisers-top-daily.md",
+      "order": 56
+    },
+    {
+      "title": "Top Daily Teams",
+      "slug": "api-reference/client-side/top-daily/get_v2-client-teams-top-daily",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/client-side/top-daily/get_v2-client-teams-top-daily",
+      "nav_path": [
+        "API Reference",
+        "Client Side APIs",
+        "Top Daily",
+        "Top Daily Teams"
+      ],
+      "nav_order": 58,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/client/teams/top/daily",
+      "http_method": "GET",
+      "endpoint_path": "/v2/client/teams/top/daily",
+      "api_surface": "client-side",
+      "auth": "API key",
+      "tags": [
+        "leaderboards",
+        "peer-to-peer",
+        "teams",
+        "widgets"
+      ],
+      "crm_relevant": false,
+      "description": "Retrieve the daily ranking of top CrowdChange fundraising teams by amount raised over the last 24 hours, for leaderboards and homepage widgets.",
+      "word_count": 429,
+      "file": "docs/api/pages/api-reference/client-side/top-daily/get_v2-client-teams-top-daily.md",
+      "order": 57
+    },
+    {
+      "title": "Top Daily Pages",
+      "slug": "api-reference/client-side/top-daily/get_v2-client-personal-pages-top-daily",
+      "collection": "api",
+      "source_url": "https://apidoc.crowdchange.dev/api-reference/client-side/top-daily/get_v2-client-personal-pages-top-daily",
+      "nav_path": [
+        "API Reference",
+        "Client Side APIs",
+        "Top Daily",
+        "Top Daily Pages"
+      ],
+      "nav_order": 59,
+      "page_type": "endpoint",
+      "endpoint": "GET /v2/client/personal-pages/top/daily",
+      "http_method": "GET",
+      "endpoint_path": "/v2/client/personal-pages/top/daily",
+      "api_surface": "client-side",
+      "auth": "API key",
+      "tags": [
+        "leaderboards",
+        "peer-to-peer",
+        "widgets"
+      ],
+      "crm_relevant": false,
+      "description": "Retrieve the daily ranking of top CrowdChange personal fundraising pages by amount raised over the last 24 hours, for leaderboards and widgets.",
+      "word_count": 513,
+      "file": "docs/api/pages/api-reference/client-side/top-daily/get_v2-client-personal-pages-top-daily.md",
+      "order": 58
+    }
+  ]
+}
