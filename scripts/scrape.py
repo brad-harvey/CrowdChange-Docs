@@ -4,19 +4,21 @@
 # ///
 """Mirror CrowdChange's documentation into LLM-friendly Markdown.
 
-Two collections:
+Three collections:
 
-  help-center  https://ch.crowdchange.help/cnak   (K15t Scroll Sites)  -> docs/help-center/
-      /cnak/__pagetree.json (left-nav hierarchy), /llms.txt + sitemap (completeness),
-      /cnak/<slug>.md (page Markdown), /cnak/<slug> HTML (last-modified + description meta tags)
+  help-center  https://ch.crowdchange.help/cnak      (K15t Scroll Sites)  -> docs/help-center/
+  chadmin      https://chadmin.crowdchange.help/ct   (K15t Scroll Sites)  -> docs/chadmin/
+      Both Scroll Sites spaces are scraped the same way: /<space>/__pagetree.json (left-nav hierarchy),
+      /llms.txt + sitemap (completeness), /<space>/<slug>.md (page Markdown), /<space>/<slug> HTML
+      (last-modified + description meta tags).
 
-  api          https://apidoc.crowdchange.dev     (Mintlify)           -> docs/api/
+  api          https://apidoc.crowdchange.dev        (Mintlify)           -> docs/api/
       /llms.txt (nav groups + descriptions), sitemap (completeness), /<path>.md (page MDX),
       overview HTML (method + path of every endpoint). MDX components are converted to plain Markdown.
 
-Shared outputs: llms.txt (repo entry point) and docs/TAGS.md (topic index across both collections).
+Shared outputs: llms.txt (repo entry point) and docs/TAGS.md (topic index across all collections).
 
-Usage (from the repo root):  uv run scripts/scrape.py [all|help-center|api]      (default: all)
+Usage (from the repo root):  uv run scripts/scrape.py [all|help-center|chadmin|api]      (default: all)
 """
 
 from __future__ import annotations
@@ -41,12 +43,24 @@ DOCS = ROOT / "docs"
 UA = "CrowdChange-Docs-mirror/1.0 (offline reference copy)"
 RETRIEVED = dt.date.today().isoformat()
 
-HC_BASE = "https://ch.crowdchange.help"
-HC_SPACE = "/cnak"
-HC_DIR = DOCS / "help-center"
-
 API_BASE = "https://apidoc.crowdchange.dev"
 API_DIR = DOCS / "api"
+
+# K15t Scroll Sites spaces: same scraping logic (pagetree/llms.txt/sitemap discovery, same page Markdown + meta tags).
+SCROLL_SITES = {
+    "help-center": {
+        "base": "https://ch.crowdchange.help", "space": "/cnak", "dir": DOCS / "help-center",
+        "home_slug": "help-center-home", "home_title": "Help Center",
+        "audience": "Charities Non-Admin (CrowdChange help center space CNAK)",
+        "label": "CrowdChange Help Center",
+    },
+    "chadmin": {
+        "base": "https://chadmin.crowdchange.help", "space": "/ct", "dir": DOCS / "chadmin",
+        "home_slug": "chadmin-home", "home_title": "Admin Help Center",
+        "audience": "Charity Admins (CrowdChange admin help center space CT)",
+        "label": "CrowdChange Admin Help Center",
+    },
+}
 
 # Topic tags shared by both collections: tag -> keywords. Help-center pages match on title, or on >=4 body hits;
 # API pages match on title, description and URL path only (their bodies are field lists that mention everything).
@@ -114,13 +128,22 @@ def write(path: Path, text: str):
 
 
 def download_all(images: dict[str, Path]):
+    failed = []
+
     def dl(item):
         url, dest = item
         if not dest.exists():
-            dest.parent.mkdir(parents=True, exist_ok=True)
-            dest.write_bytes(fetch(url, binary=True))
+            try:
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                dest.write_bytes(fetch(url, binary=True))
+            except Exception as e:
+                failed.append((url, e))
     with cf.ThreadPoolExecutor(6) as ex:
         list(ex.map(dl, images.items()))
+    if failed:
+        print(f"  WARNING: {len(failed)} asset(s) failed to download:")
+        for url, e in failed:
+            print(f"    {url}: {e}")
 
 
 def front_matter(fm: dict) -> str:
@@ -160,35 +183,36 @@ def write_manifest(path: Path, source: str, pages: list[dict]):
 
 # ------------------------------------------------------------------------------------------------- help center
 
-def hc_slug(path_or_url: str) -> str | None:
+def hc_slug(path_or_url: str, space: str) -> str | None:
     p = urllib.parse.urlparse(path_or_url).path
-    m = re.fullmatch(rf"{HC_SPACE}/([^/]+?)(?:\.md)?/?", p)
+    m = re.fullmatch(rf"{space}/([^/]+?)(?:\.md)?/?", p)
     return m.group(1) if m else None
 
 
-def hc_walk(nodes, parents, parent_slug, out, order):
+def hc_walk(nodes, parents, parent_slug, out, order, space):
     for n in nodes:
-        slug = hc_slug(n["path"])
+        slug = hc_slug(n["path"], space)
         order[0] += 1
         out[slug] = {"title": n["title"], "nav_path": parents + [n["title"]], "nav_order": order[0],
-                     "parent": parent_slug, "children": [hc_slug(c["path"]) for c in n.get("children", [])]}
-        hc_walk(n.get("children", []), parents + [n["title"]], slug, out, order)
+                     "parent": parent_slug, "children": [hc_slug(c["path"], space) for c in n.get("children", [])]}
+        hc_walk(n.get("children", []), parents + [n["title"]], slug, out, order, space)
 
 
-def hc_discover() -> dict[str, dict]:
+def hc_discover(site: dict) -> dict[str, dict]:
+    base, space = site["base"], site["space"]
     pages: dict[str, dict] = {}
-    hc_walk(json.loads(fetch(f"{HC_BASE}{HC_SPACE}/__pagetree.json")), [], None, pages, [0])
+    hc_walk(json.loads(fetch(f"{base}{space}/__pagetree.json")), [], None, pages, [0], space)
     extra: dict[str, str | None] = {}
-    for title, url in re.findall(r"\* \[(.+?)\]\((https://[^)]+)\)", fetch(f"{HC_BASE}/llms.txt")):
-        extra[hc_slug(url)] = title
-    for sm in re.findall(r"<loc>(.*?)</loc>", fetch(f"{HC_BASE}/sitemap.xml")):
+    for title, url in re.findall(r"\* \[(.+?)\]\((https://[^)]+)\)", fetch(f"{base}/llms.txt")):
+        extra[hc_slug(url, space)] = title
+    for sm in re.findall(r"<loc>(.*?)</loc>", fetch(f"{base}/sitemap.xml")):
         for loc in re.findall(r"<loc>(.*?)</loc>", fetch(sm)):
-            extra.setdefault(hc_slug(loc), None)
+            extra.setdefault(hc_slug(loc, space), None)
     for slug, title in extra.items():
         if slug and slug not in pages:
             pages[slug] = {"title": title, "nav_path": None, "nav_order": None, "parent": None, "children": []}
-    pages.setdefault("help-center-home", {"title": "Help Center", "nav_path": None, "nav_order": 0,
-                                          "parent": None, "children": [], "_src": f"{HC_BASE}{HC_SPACE}"})
+    pages.setdefault(site["home_slug"], {"title": site["home_title"], "nav_path": None, "nav_order": 0,
+                                         "parent": None, "children": [], "_src": f"{base}{space}"})
     return pages
 
 
@@ -210,13 +234,15 @@ def hc_page_type(title: str) -> str:
     return "reference"
 
 
-def scrape_help_center() -> list[dict]:
-    pages_dir, assets_dir = HC_DIR / "pages", HC_DIR / "assets"
-    pages = hc_discover()
-    print(f"[help-center] discovered {len(pages)} pages")
+def scrape_scroll_site(name: str) -> list[dict]:
+    site = SCROLL_SITES[name]
+    base, space, hc_dir = site["base"], site["space"], site["dir"]
+    pages_dir, assets_dir = hc_dir / "pages", hc_dir / "assets"
+    pages = hc_discover(site)
+    print(f"[{name}] discovered {len(pages)} pages")
 
     def get(slug):
-        src = pages[slug].get("_src", f"{HC_BASE}{HC_SPACE}/{slug}")
+        src = pages[slug].get("_src", f"{base}{space}/{slug}")
         return slug, fetch(src + ".md"), fetch(src)
 
     raw = {}
@@ -237,6 +263,8 @@ def scrape_help_center() -> list[dict]:
 
     images: dict[str, Path] = {}
     manifest = []
+    netloc = urllib.parse.urlparse(base).netloc
+    attachment_re = re.compile(rf"!\[([^\]]*)\]\((https://{re.escape(netloc)}/__attachments/[^)\s]+)\)")
     for slug, (md, _) in sorted(raw.items()):
         p = pages[slug]
         body = re.sub(r"\A---\n.*?\n---\n", "", md, flags=re.S).strip()
@@ -247,20 +275,20 @@ def scrape_help_center() -> list[dict]:
             fname = re.sub(r"[^\w.\-]", "_", urllib.parse.unquote(urllib.parse.urlparse(url).path.rsplit("/", 1)[-1]))
             images[url] = assets_dir / slug / fname
             return f"![{alt}](../assets/{slug}/{fname})"
-        body = re.sub(r"!\[([^\]]*)\]\((https://ch\.crowdchange\.help/__attachments/[^)\s]+)\)", img, body)
+        body = attachment_re.sub(img, body)
 
         # Internal links -> relative .md files; unknown ones -> live URL
         def link(m):
             text, url = m.group(1), m.group(2)
-            full = urllib.parse.urljoin(HC_BASE, url)
+            full = urllib.parse.urljoin(base, url)
             u = urllib.parse.urlparse(full)
-            if u.netloc != urllib.parse.urlparse(HC_BASE).netloc:
+            if u.netloc != netloc:
                 return m.group(0)
-            s = hc_slug(full)
+            s = hc_slug(full, space)
             frag = f"#{u.fragment}" if u.fragment else ""
-            if u.path.rstrip("/") == HC_SPACE or u.path == f"{HC_SPACE}.md":
-                s = "help-center-home"
-            if s not in pages:  # legacy Confluence export links: /cnak/Page-Title.123456.html
+            if u.path.rstrip("/") == space or u.path == f"{space}.md":
+                s = site["home_slug"]
+            if s not in pages:  # legacy Confluence export links: /<space>/Page-Title.123456.html
                 legacy = re.sub(r"\.\d+\.html$", "", urllib.parse.unquote(u.path.rsplit("/", 1)[-1]))
                 s = title_to_slug.get(norm(legacy.replace("-", " ")), s)
             if s in pages:
@@ -278,12 +306,12 @@ def scrape_help_center() -> list[dict]:
         text = re.sub(r"!?\[[^\]]*\]\([^)]*\)", " ", body).lower()
         crm = (any(k in p["title"].lower() for k in CRM_KEYWORDS)
                or sum(text.count(k) for k in CRM_KEYWORDS) >= 6)
-        file = f"docs/help-center/pages/{slug}.md"
+        file = f"docs/{name}/pages/{slug}.md"
         fm = {
             "title": p["title"],
             "slug": slug,
-            "collection": "help-center",
-            "source_url": p.get("_src", f"{HC_BASE}{HC_SPACE}/{slug}"),
+            "collection": name,
+            "source_url": p.get("_src", f"{base}{space}/{slug}"),
             "nav_path": p["nav_path"] or [p["title"]],
             "nav_order": p["nav_order"],
             "parent": p["parent"],
@@ -294,7 +322,7 @@ def scrape_help_center() -> list[dict]:
             "description": p["description"],
             "last_modified": p["last_modified"],
             "retrieved": RETRIEVED,
-            "audience": "Charities Non-Admin (CrowdChange help center space CNAK)",
+            "audience": site["audience"],
             "word_count": word_count(body),
         }
         p.update(fm)
@@ -306,23 +334,24 @@ def scrape_help_center() -> list[dict]:
                                              "last_modified", "word_count")} | {"file": file})
 
     download_all(images)
-    print(f"[help-center] wrote {len(manifest)} pages, {len(images)} images")
-    hc_indexes(pages, manifest)
+    print(f"[{name}] wrote {len(manifest)} pages, {len(images)} images")
+    hc_indexes(site, pages, manifest)
     return manifest
 
 
-def hc_indexes(pages, manifest):
+def hc_indexes(site, pages, manifest):
+    base, space, hc_dir, label = site["base"], site["space"], site["dir"], site["label"]
     by_slug = {m["slug"]: m for m in manifest}
     tree = sorted((s for s in by_slug if pages[s].get("nav_order") and pages[s]["nav_path"]
-                   and s != "help-center-home"), key=lambda s: pages[s]["nav_order"])
+                   and s != site["home_slug"]), key=lambda s: pages[s]["nav_order"])
     orphans = sorted(s for s in by_slug if s not in tree)
     ordered = [by_slug[s] for s in tree + orphans]
     for i, m in enumerate(ordered):
         m["order"] = i
 
-    lines = ["# CrowdChange Help Center - Index", "",
-             f"Mirrored from {HC_BASE}{HC_SPACE} on {RETRIEVED}. Order and nesting match the site's left navigation.",
-             "Each entry: title - page type - one-line summary. Topic index across both collections: "
+    lines = [f"# {label} - Index", "",
+             f"Mirrored from {base}{space} on {RETRIEVED}. Order and nesting match the site's left navigation.",
+             "Each entry: title - page type - one-line summary. Topic index across all collections: "
              "[../TAGS.md](../TAGS.md).", ""]
     for s in tree:
         m = by_slug[s]
@@ -333,11 +362,11 @@ def hc_indexes(pages, manifest):
                   "Found via the site's llms.txt / sitemap (e.g. linked from the home page or Featured).", ""]
         lines += [f"- [{by_slug[s]['title']}](pages/{s}.md) - *{by_slug[s]['page_type']}* - "
                   f"{short(by_slug[s]['description'])}" for s in orphans]
-    write(HC_DIR / "INDEX.md", "\n".join(lines) + "\n")
+    write(hc_dir / "INDEX.md", "\n".join(lines) + "\n")
 
-    write_manifest(HC_DIR / "manifest.json", f"{HC_BASE}{HC_SPACE}", ordered)
-    write_full_text(HC_DIR / "llms-full.txt", "CrowdChange Help Center - full text",
-                    f"All {len(ordered)} pages from {HC_BASE}{HC_SPACE}, retrieved {RETRIEVED}.",
+    write_manifest(hc_dir / "manifest.json", f"{base}{space}", ordered)
+    write_full_text(hc_dir / "llms-full.txt", f"{label} - full text",
+                    f"All {len(ordered)} pages from {base}{space}, retrieved {RETRIEVED}.",
                     [m["file"] for m in ordered])
 
 
@@ -644,65 +673,72 @@ def load_manifest(path: Path) -> list[dict]:
     return json.loads(path.read_text(encoding="utf-8"))["pages"] if path.exists() else []
 
 
-def shared_indexes(hc: list[dict], api: list[dict]):
-    hc, api = sorted(hc, key=lambda m: m["order"]), sorted(api, key=lambda m: m["order"])
+def shared_indexes(collections: dict[str, list[dict]]):
+    collections = {name: sorted(m, key=lambda m: m["order"]) for name, m in collections.items()}
+    all_pages = [m for pages in collections.values() for m in pages]
+    coll_label = {**{n: s["label"] for n, s in SCROLL_SITES.items()}, "api": "API & Developer Docs"}
 
     def link(m, base=""):
         ep = f" — `{m['endpoint']}`" if m.get("endpoint") else ""
         return f"- [{m['title']}]({base}{m['file'].removeprefix('docs/')}){ep}"
 
-    # docs/TAGS.md: one topic index across both collections
+    # docs/TAGS.md: one topic index across all collections
     tags: dict[str, dict[str, list]] = {}
-    for m in hc + api:
+    for m in all_pages:
         for t in m["tags"]:
-            tags.setdefault(t, {"help-center": [], "api": []})[m["collection"]].append(m)
+            tags.setdefault(t, {n: [] for n in collections})[m["collection"]].append(m)
     tl = ["# Topic Tags", "",
-          "Pages from both collections grouped by topic, so a help-center article and the API endpoints for the same "
+          "Pages from every collection grouped by topic, so a help-center article and the API endpoints for the same "
           "feature sit side by side. Tags are keyword-derived; use them to narrow a search, not as ground truth.", "",
           "## Contents", ""]
-    tl += [f"- [{t}](#{t}) ({len(v['help-center'])} help, {len(v['api'])} API)" for t, v in sorted(tags.items())]
+    tl += [f"- [{t}](#{t}) (" + ", ".join(f"{len(v[n])} {coll_label[n]}" for n in collections) + ")"
+           for t, v in sorted(tags.items())]
     tl += ["- [crm-relevant](#crm-relevant)", ""]
     for t, v in sorted(tags.items()):
         tl += [f"## {t}", ""]
-        for coll, label in (("help-center", "Help Center"), ("api", "API")):
+        for coll in collections:
             if v[coll]:
-                tl += [f"**{label}**", ""] + [link(m) for m in v[coll]] + [""]
+                tl += [f"**{coll_label[coll]}**", ""] + [link(m) for m in v[coll]] + [""]
     tl += ["## crm-relevant", "",
-           "Likely to matter for a CRM integration. Help-center pages: keyword match on data, reporting, donations, "
-           "receipts, registrations, etc. API pages: every server-side endpoint, plus the overview.", ""]
-    for coll, items in (("Help Center", hc), ("API", api)):
-        tl += [f"**{coll}**", ""] + [link(m) for m in items if m["crm_relevant"]] + [""]
+           "Likely to matter for a CRM integration. Help-center/admin pages: keyword match on data, reporting, "
+           "donations, receipts, registrations, etc. API pages: every server-side endpoint, plus the overview.", ""]
+    for coll, items in collections.items():
+        tl += [f"**{coll_label[coll]}**", ""] + [link(m) for m in items if m["crm_relevant"]] + [""]
     write(DOCS / "TAGS.md", "\n".join(tl))
 
     # llms.txt (llmstxt.org format): the repo's entry point
+    sources = ", ".join(f"the {s['label']} ({s['base']}{s['space']})" for s in SCROLL_SITES.values())
     lt = ["# CrowdChange Docs (offline mirror)", "",
-          "> Offline Markdown mirror of CrowdChange's two documentation sites: the charity Help Center "
-          f"({HC_BASE}{HC_SPACE}), which covers using the platform UI, and the API & developer docs ({API_BASE}): "
-          "REST endpoints, webhooks, widgets and analytics integrations. Built as reference material for a "
-          f"CrowdChange-to-CRM integration. Retrieved {RETRIEVED}.", "",
-          "Navigation: docs/help-center/INDEX.md and docs/api/INDEX.md (trees, plus an endpoint table for the API), "
-          "docs/TAGS.md (topics across both). Each collection has a manifest.json with every page's metadata. "
-          "Every page starts with YAML front matter.", "",
-          f"## Help Center ({len(hc)} pages)", ""]
-    lt += [f"- [{m['title']}]({m['file']}): {short(m['description'], 140)}" for m in hc]
-    lt += ["", f"## API & Developer Docs ({len(api)} pages)", ""]
-    lt += [f"- [{m['title']}]({m['file']}): " + (f"`{m['endpoint']}` — " if m.get("endpoint") else "")
-           + short(m["description"], 140) for m in api]
-    lt += ["", "## Optional", "",
-           "- [Help Center full text](docs/help-center/llms-full.txt): every help-center page in one file",
-           "- [API full text](docs/api/llms-full.txt): every API page in one file",
-           "- [Help Center manifest](docs/help-center/manifest.json): page metadata as JSON",
-           "- [API manifest](docs/api/manifest.json): page metadata as JSON, including method/path per endpoint"]
+          f"> Offline Markdown mirror of CrowdChange's documentation sites: {sources}, which cover using the "
+          f"platform UI as a charity or as an admin, and the API & developer docs ({API_BASE}): REST endpoints, "
+          "webhooks, widgets and analytics integrations. Built as reference material for a CrowdChange-to-CRM "
+          f"integration. Retrieved {RETRIEVED}.", "",
+          "Navigation: " + ", ".join(f"docs/{n}/INDEX.md" for n in collections)
+          + " (trees, plus an endpoint table for the API), docs/TAGS.md (topics across all). Each collection has a "
+          "manifest.json with every page's metadata. Every page starts with YAML front matter.", ""]
+    for n, pages in collections.items():
+        lt += [f"## {coll_label[n]} ({len(pages)} pages)", ""]
+        lt += [f"- [{m['title']}]({m['file']}): " + (f"`{m['endpoint']}` — " if m.get("endpoint") else "")
+               + short(m["description"], 140) for m in pages]
+        lt += [""]
+    lt += ["## Optional", ""]
+    for n in collections:
+        lt += [f"- [{coll_label[n]} full text](docs/{n}/llms-full.txt): every page in one file",
+               f"- [{coll_label[n]} manifest](docs/{n}/manifest.json): page metadata as JSON"]
     write(ROOT / "llms.txt", "\n".join(lt) + "\n")
 
 
 def main():
     mode = (sys.argv[1:] or ["all"])[0]
-    if mode not in ("all", "help-center", "api"):
-        sys.exit(f"unknown mode {mode!r}; use all, help-center or api")
-    hc = scrape_help_center() if mode in ("all", "help-center") else load_manifest(HC_DIR / "manifest.json")
-    api = scrape_api() if mode in ("all", "api") else load_manifest(API_DIR / "manifest.json")
-    shared_indexes(hc, api)
+    valid = ("all", "api", *SCROLL_SITES)
+    if mode not in valid:
+        sys.exit(f"unknown mode {mode!r}; use one of {', '.join(valid)}")
+    collections = {}
+    for name, site in SCROLL_SITES.items():
+        collections[name] = (scrape_scroll_site(name) if mode in ("all", name)
+                             else load_manifest(site["dir"] / "manifest.json"))
+    collections["api"] = scrape_api() if mode in ("all", "api") else load_manifest(API_DIR / "manifest.json")
+    shared_indexes(collections)
     print("Shared indexes written: llms.txt, docs/TAGS.md")
 
 

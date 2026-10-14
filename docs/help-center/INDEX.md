@@ -1,7 +1,7 @@
 # CrowdChange Help Center - Index
 
 Mirrored from https://ch.crowdchange.help/cnak on 2026-10-14. Order and nesting match the site's left navigation.
-Each entry: title - page type - one-line summary. Topic index across both collections: [../TAGS.md](../TAGS.md).
+Each entry: title - page type - one-line summary. Topic index across all collections: [../TAGS.md](../TAGS.md).
 
 - [How To Start a Fundraiser](pages/how-to-start-a-fundraiser.md) - *how-to* - You can create a custom fundraising page on your CrowdChange site in under 5 minutes! Simply follow the steps below: Click the Start A Fundraiser button in the…
 - [Customizing your fundraiser UI & design](pages/customizing-your-fundraiser-ui-design.md) - *reference* - CrowdChange's offers a fully customizable fundraising page with detailed options for branding, layouts and content! Fundraisers are built in a ‘block’ structur…

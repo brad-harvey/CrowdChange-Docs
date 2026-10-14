@@ -1,18 +1,20 @@
 # CrowdChange-Docs
 
-An offline, LLM-friendly mirror of CrowdChange's two documentation sites:
+An offline, LLM-friendly mirror of CrowdChange's documentation sites:
 
 | Collection | Source | What it covers | Pages |
 |---|---|---|---|
 | **Help Center** (`docs/help-center/`) | <https://ch.crowdchange.help/cnak> | Using the CrowdChange UI as a charity: fundraisers, donations, ticketing, registration, P2P/teams, reports, receipts | 96 |
+| **Admin Help Center** (`docs/chadmin/`) | <https://chadmin.crowdchange.help/ct> | Admin-level setup and configuration: site settings, integrations (Salesforce, DonorPerfect, analytics connectors), blueprints, moderation, advanced feature setup | 159 |
 | **API & Developer Docs** (`docs/api/`) | <https://apidoc.crowdchange.dev> | REST API (server-side and client-side), webhooks and event payloads, embeddable widgets, analytics/pixel integrations | 59 (47 endpoints) |
 
-It's the reference knowledge base for a CrowdChange ↔ CRM integration project. The two collections answer
+It's the reference knowledge base for a CrowdChange ↔ CRM integration project. The collections answer
 different questions:
 - **Help Center:** what a feature does and how staff use it.
+- **Admin Help Center:** how an org admin configures and integrates the platform.
 - **API docs:** how to read or write that data programmatically.
 
-`docs/TAGS.md` puts both side by side by topic.
+`docs/TAGS.md` puts all three side by side by topic.
 
 > Unofficial copy. All content © CrowdChange. The live sites are authoritative. Check `retrieved` (and, for help-center
 > pages, `last_modified`) in each page's front matter to see how current it is.
@@ -30,6 +32,7 @@ docs/
     llms-full.txt            Every help-center page in one file (~390 KB)
     pages/<slug>.md          One file per page (slug = last segment of the live URL)
     assets/<slug>/           Screenshots for that page
+  chadmin/                   Same layout as help-center/, mirrored from the Admin Help Center (/ct space)
   api/
     INDEX.md                 Sidebar tree with METHOD /path per endpoint, plus an endpoint quick-reference table
     manifest.json            Metadata for every page, including http_method / endpoint_path / auth
@@ -55,7 +58,8 @@ Every page starts with YAML front matter. Common fields:
 | `retrieved` | When this mirror was taken |
 | `word_count` | Text size, excluding images |
 
-Help-center pages also have `parent` / `children` (slugs) and `last_modified`.
+Help-center and chadmin pages also have `parent` / `children` (slugs), `last_modified`, and `audience` (which site the
+page is from).
 
 API pages also have:
 - `endpoint` (e.g. `GET /v2/private/transactions`), `http_method`, `endpoint_path`
@@ -85,15 +89,15 @@ Links between pages are rewritten to relative `.md` links in both collections, s
 ## Refreshing
 
 ```sh
-uv run scripts/scrape.py              # both collections + shared indexes
-uv run scripts/scrape.py api          # just the API docs (or: help-center)
+uv run scripts/scrape.py                # all collections + shared indexes
+uv run scripts/scrape.py api            # just the API docs (or: help-center, chadmin)
 ```
 
 Run it from the repo root. If your machine stops Python from opening the script file, pipe it in instead:
-`uv run --with pyyaml python - [all|help-center|api] < scripts/scrape.py`.
+`uv run --with pyyaml python - [all|help-center|chadmin|api] < scripts/scrape.py`.
 
-The scraper only uses endpoints that the two platforms publish themselves:
-- **Help Center (K15t Scroll Sites):** `__pagetree.json`, `llms.txt`, the sitemap and `<page>.md`
+The scraper only uses endpoints that the platforms publish themselves:
+- **Help Center / Admin Help Center (K15t Scroll Sites):** `__pagetree.json`, `llms.txt`, the sitemap and `<page>.md`
 - **API docs (Mintlify):** `llms.txt`, the sitemap, `<page>.md` and the sidebar data
 
 Commit the result, and `git diff` shows exactly what CrowdChange changed.

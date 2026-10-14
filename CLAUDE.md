@@ -1,10 +1,13 @@
 # Instructions for LLM agents
 
 This repo is an offline mirror of CrowdChange's documentation, used as reference material for integrating CrowdChange
-with our CRM. It has two collections:
+with our CRM. It has three collections:
 
 - **`docs/help-center/`**: the charity Help Center (https://ch.crowdchange.help/cnak). It covers *what features do and
   how staff use them in the UI*: fundraisers, donations, tickets, registrations, teams/P2P, reports, receipts and refunds.
+- **`docs/chadmin/`**: the Admin Help Center (https://chadmin.crowdchange.help/ct). It covers *admin-level setup and
+  configuration*: site settings, third-party integrations (Salesforce, DonorPerfect, analytics connectors), event
+  blueprints, fundraiser moderation, and other advanced/admin-only features not in the regular Help Center.
 - **`docs/api/`**: the API & developer docs (https://apidoc.crowdchange.dev). It covers *how to get data in and out
   programmatically*: REST endpoints, webhooks and event payloads, widgets and analytics pixels.
 
@@ -13,13 +16,13 @@ so hand edits will be overwritten. Put our own notes, mappings and designs somew
 
 ## How to find things
 
-1. **Entry point:** `llms.txt` lists every page in both collections with a one-line summary. API entries include
+1. **Entry point:** `llms.txt` lists every page in all collections with a one-line summary. API entries include
    `METHOD /path`.
-2. **Trees:** `docs/help-center/INDEX.md` follows the help center's left nav. `docs/api/INDEX.md` follows the API
-   sidebar and ends with an **endpoint quick-reference table** (method, path, surface, auth).
-3. **By topic, across both:** `docs/TAGS.md`. Each tag lists help-center pages and API pages separately. For example,
-   `offline-donations` shows the how-to articles next to the offline-transaction endpoints. Its `crm-relevant` section
-   is the best starting list for integration work.
+2. **Trees:** `docs/help-center/INDEX.md` and `docs/chadmin/INDEX.md` follow each site's left nav. `docs/api/INDEX.md`
+   follows the API sidebar and ends with an **endpoint quick-reference table** (method, path, surface, auth).
+3. **By topic, across all three:** `docs/TAGS.md`. Each tag lists help-center, chadmin and API pages separately. For
+   example, `offline-donations` shows the how-to articles next to the offline-transaction endpoints. Its
+   `crm-relevant` section is the best starting list for integration work.
 4. **Search:** grep `docs/*/pages/**/*.md`. Front matter fields can be grepped directly:
    - `grep -rl "endpoint: POST" docs/api/pages`
    - `grep -rl "api_surface: server-side" docs/api/pages`
@@ -42,8 +45,8 @@ so hand edits will be overwritten. Put our own notes, mappings and designs somew
 
 ## Conventions
 
-- **Help-center files** are `docs/help-center/pages/<slug>.md`, where the slug matches the live URL. `parent`/`children`
-  in the front matter are slugs.
+- **Help-center and chadmin files** are `docs/<collection>/pages/<slug>.md`, where the slug matches the live URL.
+  `parent`/`children` in the front matter are slugs. `audience` says which site (CNAK vs CT) the page is from.
 - **API files** mirror the site's URL path: `docs/api/pages/<path>.md`. Endpoint pages have `endpoint`,
   `http_method`, `endpoint_path`, `api_surface` and `auth` in the front matter, and repeat them under the H1.
 - **API schemas** are nested lists in the form `` - `field` (type, location, **required**) — description ``.
@@ -55,10 +58,11 @@ so hand edits will be overwritten. Put our own notes, mappings and designs somew
 ## When answering questions
 
 - **Cite your sources.** Give the page's `title` and `source_url` so a person can check the live site.
-- **Use both collections.** For integration questions, pair the API page (the field or endpoint) with the help-center
-  page that explains the business meaning, e.g. what "covered fees" or "offline donation" means for staff.
-- **Watch for drift.** Mention `retrieved` (and `last_modified` for help-center pages) when details matter. The mirror
-  can lag the live sites, and the live sites are authoritative.
+- **Use multiple collections.** For integration questions, pair the API page (the field or endpoint) with the
+  help-center/chadmin page that explains the business meaning, e.g. what "covered fees" or "offline donation" means
+  for staff, or the chadmin page for how an admin enables a given integration.
+- **Watch for drift.** Mention `retrieved` (and `last_modified` for help-center/chadmin pages) when details matter.
+  The mirror can lag the live sites, and the live sites are authoritative.
 - **Don't guess.** If an endpoint, field or event isn't documented here, say so. Don't infer one from naming patterns.
 - **Treat the metadata as hints.** `tags` and `crm_relevant` are keyword heuristics for narrowing a search, not
   ground truth.
